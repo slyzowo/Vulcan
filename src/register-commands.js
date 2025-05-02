@@ -1,3 +1,4 @@
+// Imports for Discord.js & .env
 const {REST, Routes, ApplicationCommandOptionType} = require("discord.js");
 require('dotenv').config();
 
@@ -36,11 +37,12 @@ const commands = [
       description: "the second number",
       type: ApplicationCommandOptionType.Number,
       required: true,
-    }
-]},];
+  }]},];
 
+// Token for REST api
 const rest = new REST({version: "10"}).setToken(process.env.TOKEN);
 
+// Error handling
 (async() =>{
   try{
     console.log("Registering Slash Commands");

@@ -17,13 +17,8 @@ client.on("ready", (c) => { console.log(`${c.user.tag} has been started!`); }); 
 
 client.on("messageCreate", (message) => {
   console.log(message.author.username, message.author.id, message.content); // logs username, userid, and message content
-
   if (message.author.bot){ return; } // voids recursion
-
-/* Removed Hello command
-  if (message.content === "hello"){ message.reply('hello!'); } says hello to you
-*/
-});
+  });
 
 client.on("interactionCreate", (interaction) =>{
   if(!interaction.isChatInputCommand()) return;

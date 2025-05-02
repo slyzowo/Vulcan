@@ -19,10 +19,10 @@ Token = "{your-token}"
 
 ### .env
 
-things you need in the .env file
-  - TOKEN
-  - GUILD_ID
-  - BOT_ID
+things you need in the `.env` file
+- TOKEN
+- GUILD_ID
+- BOT_ID
 
 ## Slash Commands
 - /echo          `"up to 2000 characters!"`
