@@ -3,41 +3,51 @@ const {REST, Routes, ApplicationCommandOptionType} = require("discord.js");
 require('dotenv').config();
 
 const commands = [
-  {name : "echo", 
-    description : "says what you said",
-    options: [
-      {
-        name: "echo-message",
-        description: "Echos the Message",
-        type: ApplicationCommandOptionType.String,
-        required: true,
+{name : "echo", 
+description : "says what you said",
+options: [{
+    name: "echo-message",
+    description: "Echos the Message",
+    type: ApplicationCommandOptionType.String,
+    required: true,
 }]},
 
-  {name : "whisper-echo", 
-    description : "says what you said but as a whisper",
-    options: [
-      {
-        name: "whisper-echo-message",
-        description: "Echos the Message but as a whisper",
-        type: ApplicationCommandOptionType.String,
-        required: true,
+{name : "whisper-echo", 
+  description : "says what you said but as a whisper",
+  options: [{
+      name: "whisper-echo-message",
+      description: "Echos the Message but as a whisper",
+      type: ApplicationCommandOptionType.String,
+      required: true,
 }]},
 
-  {name : "add",
-    description : "adds two numbers together",
-    options: [
-    {
-      name: "first-number",
-      description: "the first number",
-      type: ApplicationCommandOptionType.Number,
-      required: true,
-    },
-    {
-      name: "second-number",
-      description: "the second number",
-      type: ApplicationCommandOptionType.Number,
-      required: true,
-  }]},];
+{name : "embed",
+description : "Sends an embed",
+options: [{
+    name: "embed-title",
+    description: "Embed Title",
+    type: ApplicationCommandOptionType.String,
+    required: true,
+},{
+    name: "embed-description",
+    description: "Embed Description",
+    type: ApplicationCommandOptionType.String,
+    required: true,
+}]},
+
+{name : "add",
+description : "adds two numbers together",
+options: [{
+  name: "first-number",
+  description: "the first number",
+  type: ApplicationCommandOptionType.Number,
+  required: true,
+},{
+  name: "second-number",
+  description: "the second number",
+  type: ApplicationCommandOptionType.Number,
+  required: true,
+}]},];
 
 // Token for REST api
 const rest = new REST({version: "10"}).setToken(process.env.TOKEN);

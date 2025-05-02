@@ -1,5 +1,5 @@
 # Vulcan
-Vulcan, a Discord application
+Vulcan, a Discord Bot Application
 
 ### Dependancies
 - node.js
@@ -7,28 +7,38 @@ Vulcan, a Discord application
 - dotenv
 
 ## Installation
-
-Install node.js from nodejs.org. <br>
-Install discord.js by typing `npm install discord.js`<br>
-Install Dotenv by `npm install dotenv`<br>
+node.js from [nodejs.org](https://nodejs.org/en). <br>
+discord.js by typing `npm install discord.js`<br>
+Dotenv by `npm install dotenv`<br>
 
 Make a `.env` file and write
 ```
-Token = "{your-token}"
+TOKEN = "bot-token-here"
+GUILD_ID = "guild-id-here"
+BOT_ID = "bot-id-here"
 ```
 
-### .env
-
-things you need in the `.env` file
-- TOKEN
-- GUILD_ID
-- BOT_ID
-
-## Slash Commands
+## Active Slash Commands
+- /add           `number1` `number2`
+- /divide        `number1` `number2`
 - /echo          `"up to 2000 characters!"`
+- /multiply      `number1` `number2`
+- /substract     `number1` `number2`
 - /whisper-echo  `"up to 2000 characters!"`
 
 ## Future Goals
-- /ban           `@username / uid`
-- /kick          `@username / uid`
-- /timeout       `@username / uid`, `duration`
+- /ban           `@username`
+- /coinflip
+- /delete        `number of messages`, `#channel`,
+- /diceroll      `min number`, `max number`
+- /feedback      `1-10`, `review`, `suggestions`
+- /help
+- /info
+- /join-message
+- /kick          `@username`
+- /leave-message
+- /log           `enable | disable`, `#channel`
+- /timeout       `@username`, `duration`
+
+### Other
+- Dashboard?

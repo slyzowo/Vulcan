@@ -1,5 +1,5 @@
 // imports Client and Intents from Discord.js
-const {Client, IntentsBitField} = require("discord.js");
+const {Client, IntentsBitField, EmbedBuilder} = require("discord.js");
 
 // security 
 require('dotenv').config();
@@ -14,22 +14,35 @@ const client = new Client({
 ]});
 
 client.on("ready", (c) => { console.log(`${c.user.tag} has been started!`); }); // logging Start Sequence
+
 client.on("messageCreate", (message) => {
   if (message.author.bot){ return; } // voids recursion
   });
 
 client.on("interactionCreate", (interaction) =>{
   if(!interaction.isChatInputCommand()) return;
-  console.log(interaction.commandName); // logs command name
+  console.log(interaction.commandName); // logs command sent
 
   if (interaction.commandName === "echo"){ 
-    const usermessage = interaction.options.get("echo-message")?.value;
-    interaction.reply(`${usermessage}`);
+    const userMessage = interaction.options.get("echo-message")?.value;
+    interaction.reply(`${userMessage}`);
+  }
+  
+  if (interaction.commandName === "whisper-echo"){ 
+    const userMessage = interaction.options.get("whisper-echo-message")?.value;
+    interaction.reply(`${userMessage}`);
   }
 
-  if (interaction.commandName === "whisper-echo"){ 
-    const usermessage = interaction.options.get("whisper-echo-message")?.value;
-    interaction.reply(`-# ${usermessage}`);
+  if (interaction.commandName === "embed"){ 
+
+    const embedTitle = interaction.options.get("embed-title")?.value;
+    const embedDescription = interaction.options.get("embed-description")?.value;
+
+    const embed = new EmbedBuilder()
+    .addFields({
+      name: `${embedTitle}`, 
+      value: `${embedDescription}`});
+    interaction.reply({ embeds: [ embed ]});
   }
 
   if (interaction.commandName === "add"){ 
@@ -37,7 +50,6 @@ client.on("interactionCreate", (interaction) =>{
     const num2 = interaction.options.get("second-number")?.value;
 
     interaction.reply(`The result of ${num1} + ${num2} = ${num1 + num2}`);
-
   }
 })
 
