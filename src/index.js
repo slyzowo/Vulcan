@@ -13,16 +13,14 @@ const client = new Client({
     IntentsBitField.Flags.MessageContent,    // read messages
 ]});
 
-client.on("ready", (c) => { console.log(`${c.user.tag} has been started!`); }); // logging 
-
+client.on("ready", (c) => { console.log(`${c.user.tag} has been started!`); }); // logging Start Sequence
 client.on("messageCreate", (message) => {
-  console.log(message.author.username, message.author.id, message.content); // logs username, userid, and message content
   if (message.author.bot){ return; } // voids recursion
   });
 
 client.on("interactionCreate", (interaction) =>{
   if(!interaction.isChatInputCommand()) return;
-  console.log(interaction.commandName);
+  console.log(interaction.commandName); // logs command name
 
   if (interaction.commandName === "echo"){ 
     const usermessage = interaction.options.get("echo-message")?.value;
@@ -33,8 +31,6 @@ client.on("interactionCreate", (interaction) =>{
     const usermessage = interaction.options.get("whisper-echo-message")?.value;
     interaction.reply(`-# ${usermessage}`);
   }
-
-// if (interaction.commandName === "whisper-echo"){  }
 
   if (interaction.commandName === "add"){ 
     const num1 = interaction.options.get("first-number")?.value;
