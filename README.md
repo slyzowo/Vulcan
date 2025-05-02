@@ -17,7 +17,18 @@ Make a `.env` file and write
 Token = "{your-token}"
 ```
 
-## Commands
-- says "hello!" when you say "hello"
+### .env
 
-## Features
+things you need in the .env file
+  - TOKEN
+  - GUILD_ID
+  - BOT_ID
+
+## Slash Commands
+- /echo          `"up to 2000 characters!"`
+- /whisper-echo  `"up to 2000 characters!"`
+
+## Future Goals
+- /ban           `@username / uid`
+- /kick          `@username / uid`
+- /timeout       `@username / uid`, `duration`
