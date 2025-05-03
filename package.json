@@ -1,6 +1,6 @@
 {
   "name": "vulcan",
-  "version": "0.0.1",
+  "version": "0.0.7",
   "description": "Vulcan, a Discord app",
   "main": "src/index.js",
   "scripts": {
