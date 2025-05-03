@@ -48,8 +48,25 @@ client.on("interactionCreate", (interaction) =>{
   if (interaction.commandName === "add"){ 
     const num1 = interaction.options.get("first-number")?.value;
     const num2 = interaction.options.get("second-number")?.value;
-
     interaction.reply(`The result of ${num1} + ${num2} = ${num1 + num2}`);
+  }
+
+  if (interaction.commandName === "subtract"){ 
+    const num1 = interaction.options.get("first-number")?.value;
+    const num2 = interaction.options.get("second-number")?.value;
+    interaction.reply(`The result of ${num1} + ${num2} = ${num1 - num2}`);
+  }
+
+  if (interaction.commandName === "multiply"){ 
+    const num1 = interaction.options.get("first-number")?.value;
+    const num2 = interaction.options.get("second-number")?.value;
+    interaction.reply(`The result of ${num1} + ${num2} = ${num1 * num2}`);
+  }
+
+  if (interaction.commandName === "divide"){ 
+    const num1 = interaction.options.get("first-number")?.value;
+    const num2 = interaction.options.get("second-number")?.value;
+    interaction.reply(`The result of ${num1} + ${num2} = ${num1 / num2}`);
   }
 })
 

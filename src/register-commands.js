@@ -47,6 +47,47 @@ options: [{
   description: "the second number",
   type: ApplicationCommandOptionType.Number,
   required: true,
+}]},
+
+{name : "subtract",
+description : "subtracts two numbers together",
+options: [{
+  name: "first-number",
+  description: "the first number",
+  type: ApplicationCommandOptionType.Number,
+  required: true,
+},{
+  name: "second-number",
+  description: "the second number",
+  type: ApplicationCommandOptionType.Number,
+  required: true,
+}]},
+
+{name : "multiply",
+description : "multiplies two numbers together",
+options: [{
+  name: "first-number",
+  description: "the first number",
+  type: ApplicationCommandOptionType.Number,
+  required: true,
+},{
+  name: "second-number",
+  description: "the second number",
+  type: ApplicationCommandOptionType.Number,
+  required: true,
+}]},
+{name : "divide",
+description : "divides two numbers",
+options: [{
+  name: "first-number",
+  description: "the first number",
+  type: ApplicationCommandOptionType.Number,
+  required: true,
+},{
+  name: "second-number",
+  description: "the second number",
+  type: ApplicationCommandOptionType.Number,
+  required: true,
 }]},];
 
 // Token for REST api
