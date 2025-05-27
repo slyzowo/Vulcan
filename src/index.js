@@ -1,9 +1,7 @@
 // imports Client and Intents from Discord.js
 const {Client, IntentsBitField, EmbedBuilder} = require("discord.js");
-
 // security 
 require('dotenv').config();
-
 
 const client = new Client({
   intents: [                    // Intents are Permissions
@@ -67,6 +65,20 @@ client.on("interactionCreate", (interaction) =>{
     const num1 = interaction.options.get("first-number")?.value;
     const num2 = interaction.options.get("second-number")?.value;
     interaction.reply(`The result of ${num1} + ${num2} = ${num1 / num2}`);
+  }
+
+  if (interaction.commandName === "coinflip"){ 
+    
+    let randnum = Math.floor(Math.random() * 1);
+    if(randnum = 0){
+      interaction.reply(`Heads`);
+    }
+    if(randnum = 1){
+      interaction.reply(`Tails`);
+    }
+    if(randnum > 1){
+      interaction.reply(`Error, Random number is above 1`);
+    }
   }
 })
 

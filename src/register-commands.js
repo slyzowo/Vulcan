@@ -21,6 +21,13 @@ options: [{
       required: true,
 }]},
 
+{name : "coinflip", 
+  description : "does a coin flip",
+  options: [{
+      name: "coinflip-message",
+      description: "Coin flip!",
+}]},
+
 {name : "embed",
 description : "Sends an embed",
 options: [{
